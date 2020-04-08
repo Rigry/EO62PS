@@ -3,6 +3,7 @@
 #include "pin.h"
 #include "adc.h"
 #include "flash.h"
+#include "timers.h"
 #include "modbus_slave.h"
 #include "NTC_table.h"
 
@@ -38,6 +39,7 @@ class Sensor
 {
    ADC_& adc;
    Modbus& modbus;
+   Timer refresh{1_s};
    Flash_data& flash;
    uint16_t temperature{0};
 
@@ -67,7 +69,8 @@ public:
    void operator() () {
 
       temp(adc.temperature);
-      modbus.outRegs.uv_level    = adc.uv_level;
+      if (refresh.event())
+         modbus.outRegs.uv_level = adc.uv_level;
       modbus.outRegs.temperature = temperature;
       
       modbus([&](auto registr){
