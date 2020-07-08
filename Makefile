@@ -8,11 +8,7 @@ BUILD_DIR = build
 # source
 ######################################
 CPP_SOURCES_F0 = src/main.cpp
-<<<<<<< HEAD
 LIBRARY_PATH = mculib
-=======
-LIBRARY_PATH = mculib3
->>>>>>> ac971877a76972c763d7ddfcca59ad0bd846bd1d
 CMSIS_PATH = $(LIBRARY_PATH)/STM32F0_files
 
 ASM_SOURCES_F0 = $(CMSIS_PATH)/startup_stm32f030x6.s
