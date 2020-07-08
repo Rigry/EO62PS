@@ -1,3 +1,4 @@
-[submodule "mculib3"]
-	path = mculib3
-	url = https://portal.office.alexplus.ru:3000/electronics/mculib3.git
+
+[submodule "mculib"]
+	path = mculib
+	url = https://github.com/Rigry/mculib3.git
