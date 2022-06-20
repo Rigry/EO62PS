@@ -1,4 +1,2 @@
-build
-!build/EO104.bin
-!build/EO104.hex
+# build
 .vscode/ipch

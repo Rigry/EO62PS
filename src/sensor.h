@@ -70,7 +70,7 @@ public:
 
       temp(adc.temperature);
       if (refresh.event())
-         modbus.outRegs.uv_level = adc.uv_level;
+         modbus.outRegs.uv_level = adc.uv_level / conversion_on_channel;
       modbus.outRegs.temperature = temperature;
       
       modbus([&](auto registr){

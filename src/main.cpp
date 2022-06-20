@@ -37,8 +37,8 @@ int main()
    }flash;
 
    [[maybe_unused]] auto _ = Flash_updater<
-        mcu::FLASH::Sector::_10
-      , mcu::FLASH::Sector::_9
+        mcu::FLASH::Sector::_31
+      , mcu::FLASH::Sector::_30
    >::make (&flash);
 
    ADC_ adc;
@@ -82,7 +82,7 @@ int main()
       // }
       // flash.modbus_address = flash.modbus_address != adress ? adress : flash.modbus_address;
       sensor();
-      __WFI();
+      // __WFI();
    }
 
 }

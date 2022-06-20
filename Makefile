@@ -1,6 +1,6 @@
 TARGET_F0 = EO62PS
 DEBUG = 1
-OPT = -Os
+OPT = -O0
 CPPSTD =-std=c++17
 BUILD_DIR = build
 
@@ -110,7 +110,7 @@ clean:
 	-rm -fR .dep $(BUILD_DIR)
 
 flash:
-	st-flash write $(BUILD_DIR)/$(TARGET_F0).bin 0x8000000
+	st-flash --reset write $(BUILD_DIR)/$(TARGET_F0).bin 0x8000000
 
 util:
 	st-util
