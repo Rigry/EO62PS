@@ -6,23 +6,30 @@
 #include "timers.h"
 #include "modbus_slave.h"
 #include "NTC_table.h"
+#include "utils.h"
 
 struct In_regs {
    
-   UART::Settings uart_set;         // 0
-   uint16_t modbus_address;         // 1
-   uint16_t password;               // 2
-   uint16_t factory_number;         // 3
+   uint16_t address;         // 0
+   uint16_t baudrate;        // 1
+   uint16_t parity;          // 2
+   uint16_t stop_bits;       // 3
+   uint16_t reset_max;       // 4 code = 0x524D or 21069
 }__attribute__((packed));
 
    struct Out_regs {
 
-   uint16_t uv_level;                // 0
-   uint16_t temperature;             // 1
-   // uint16_t device_code;            // 0
-   // uint16_t factory_number;         // 1
-   // UART::Settings uart_set;         // 2
-   // uint16_t modbus_address;         // 3
+   uint16_t uv_level;         // 0
+   uint16_t temperature;      // 1
+   uint16_t uv_level_percent; // 2
+   uint16_t uv_level_max;     // 3
+   uint16_t reset_max;        // 4
+   uint16_t address;          // 5
+   uint16_t baudrate;         // 6
+   uint16_t parity;           // 7
+   uint16_t stop_bits;        // 8
+   uint16_t version;          // 9
+
 }__attribute__((packed));
 
 #define ADR(reg) GET_ADR(In_regs, reg)
@@ -39,9 +46,11 @@ class Sensor
 {
    ADC_& adc;
    Modbus& modbus;
-   Timer refresh{1_s};
    Flash_data& flash;
+   Pin& factory;
+   Timer refresh{1_s};
    uint16_t temperature{0};
+   const uint16_t RESET_CODE {0x524D};
 
    const size_t U = 33;
    const size_t R = 5100;
@@ -57,10 +66,11 @@ class Sensor
    }
 public:
 
-   Sensor (ADC_& adc, Modbus& modbus, Flash_data& flash) 
+   Sensor (ADC_& adc, Modbus& modbus, Flash_data& flash, Pin& factory) 
       : adc    {adc}
       , modbus {modbus}
       , flash  {flash}
+      , factory{factory}
       {
          adc.control.start();
       }
@@ -69,35 +79,83 @@ public:
    void operator() () {
 
       temp(adc.temperature);
-      if (refresh.event())
+      if (refresh.event()) {
          modbus.outRegs.uv_level = adc.uv_level / conversion_on_channel;
+         set_if_greater (&flash.uv_level_max, modbus.outRegs.uv_level);
+         modbus.outRegs.uv_level_max = flash.uv_level_max;
+         modbus.outRegs.uv_level_percent = modbus.outRegs.uv_level * 100 / flash.uv_level_max;
+      }
       modbus.outRegs.temperature = temperature;
       
       modbus([&](auto registr){
-         static bool unblock = false;
          switch (registr) {
-            case ADR(uart_set):
-               flash.uart_set
-                  // = modbus.outRegs.uart_set
-                  = modbus.inRegs.uart_set;
-            break;
-            case ADR(modbus_address):
-               flash.modbus_address 
-                  // = modbus.outRegs.modbus_address
-                  = modbus.inRegs.modbus_address;
-            break;
-            case ADR(password):
-               unblock = modbus.inRegs.password == 208;
-            break;
-            case ADR(factory_number):
-               if (unblock) {
-                  unblock = false;
-                  flash.factory_number 
-                     // = modbus.outRegs.factory_number
-                     = modbus.inRegs.factory_number;
+            case ADR(address):
+               if (factory) {
+                  flash.address 
+                  = modbus.outRegs.address
+                  = modbus.inRegs.address;
                }
-               unblock = true;
             break;
+            case ADR(baudrate):
+               if (factory) {
+                  flash.baudrate 
+                     = modbus.outRegs.baudrate
+                     = modbus.inRegs.baudrate;
+                  if (modbus.inRegs.baudrate == 0)
+                     flash.uart_set.baudrate = USART::Baudrate::BR9600;
+                  else if (modbus.inRegs.baudrate == 1)
+                     flash.uart_set.baudrate = USART::Baudrate::BR14400;
+                  else if (modbus.inRegs.baudrate == 2)
+                     flash.uart_set.baudrate = USART::Baudrate::BR19200;
+                  else if (modbus.inRegs.baudrate == 3)
+                     flash.uart_set.baudrate = USART::Baudrate::BR28800;
+                  else if (modbus.inRegs.baudrate == 4)
+                     flash.uart_set.baudrate = USART::Baudrate::BR38400;
+                  else if (modbus.inRegs.baudrate == 5)
+                     flash.uart_set.baudrate = USART::Baudrate::BR57600;
+                  else if (modbus.inRegs.baudrate == 6)
+                     flash.uart_set.baudrate = USART::Baudrate::BR76800;
+                  else if (modbus.inRegs.baudrate == 7)
+                     flash.uart_set.baudrate = USART::Baudrate::BR115200;
+               }
+            break;
+            case ADR(parity):
+               if (factory) {
+                  flash.parity 
+                     = modbus.outRegs.parity
+                     = modbus.inRegs.parity;
+                  if (modbus.inRegs.parity == 0) {
+                     flash.uart_set.parity_enable = false;
+                     flash.uart_set.parity = USART::Parity::even;
+                  } else if (modbus.inRegs.parity == 1) {
+                     flash.uart_set.parity_enable = true;
+                     flash.uart_set.parity = USART::Parity::even;
+                  } else if (modbus.inRegs.parity == 2) {
+                     flash.uart_set.parity_enable = true;
+                     flash.uart_set.parity = USART::Parity::odd;
+                  }
+               }
+            break;
+            case ADR(stop_bits):
+               if (factory) {
+                  flash.stop_bits 
+                     = modbus.outRegs.stop_bits
+                     = modbus.inRegs.stop_bits;
+                  if (modbus.inRegs.stop_bits == 0)
+                     flash.uart_set.stop_bits = USART::StopBits::_1;
+                  else if (modbus.inRegs.stop_bits == 1)
+                     flash.uart_set.stop_bits = USART::StopBits::_2;
+               }
+            break;
+            case ADR(reset_max):
+               if (modbus.inRegs.reset_max == RESET_CODE) {
+                  flash.uv_level_max = 0;
+                  modbus.outRegs.reset_max = 0;
+               } else {
+                  modbus.outRegs.reset_max = modbus.inRegs.reset_max;
+               }
+            break;
+            
          } // switch
       }); // modbus([&](auto registr)
    }

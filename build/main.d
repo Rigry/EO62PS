@@ -24,7 +24,7 @@ build/main.d: src/main.cpp mculib/src/periph/periph_rcc.h \
  mculib/src/subscriber.h mculib/src/periph/systick.h \
  mculib/src/bits/bits_systick_f0_f4.h mculib/src/modbus_slave.h \
  mculib/src/table_crc.h mculib/src/uart.h mculib/src/net_buffer.h \
- mculib/src/modbus_common.h mculib/src/NTC_table.h
+ mculib/src/modbus_common.h mculib/src/NTC_table.h src/utils.h
 
 mculib/src/periph/periph_rcc.h:
 
@@ -137,3 +137,5 @@ mculib/src/net_buffer.h:
 mculib/src/modbus_common.h:
 
 mculib/src/NTC_table.h:
+
+src/utils.h:
