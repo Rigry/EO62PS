@@ -37,8 +37,9 @@ int main()
       uint8_t baudrate  = 0;
       uint8_t parity    = 0; 
       uint8_t stop_bits = 0;
-      uint8_t version   = 10;
-      uint16_t uv_level_max = 0x0100;
+      uint8_t version_device = 11;
+      uint8_t version_lib    = 110;
+      uint16_t uv_level_max  = 0x0100;
    }flash;
 
    [[maybe_unused]] auto _ = Flash_updater<
@@ -65,30 +66,31 @@ int main()
      uart_set = flash.uart_set;
    }
 
-   volatile decltype(auto) modbus = Modbus_slave<In_regs, Out_regs>
+   volatile decltype(auto) modbus = Modbus_slave<Hold_regs, Input_regs>
                  ::make<mcu::Periph::USART1, TX, RX, RTS>
                        (address, uart_set);
 
    using Flash  = decltype(flash);
-   using Modbus = Modbus_slave<In_regs, Out_regs>;
+   using Modbus = Modbus_slave<Hold_regs, Input_regs>;
    Sensor<Flash, Modbus> sensor {adc, modbus, flash, factory};
 
-   modbus.inRegsMin.address  = 1;
-   modbus.inRegsMax.address  = 247;
-   modbus.inRegsMin.baudrate  = 0;
-   modbus.inRegsMax.baudrate  = 7;
-   modbus.inRegsMin.parity  = 0;
-   modbus.inRegsMax.parity  = 2;
-   modbus.inRegsMin.stop_bits  = 0;
-   modbus.inRegsMax.stop_bits  = 1;
-   modbus.inRegsMin.reset_max  = 0x524D;
-   modbus.inRegsMax.reset_max  = 0x524D;
+   modbus.holdRegsMin.address  = 1;
+   modbus.holdRegsMax.address  = 247;
+   modbus.holdRegsMin.baudrate  = 0;
+   modbus.holdRegsMax.baudrate  = 7;
+   modbus.holdRegsMin.parity  = 0;
+   modbus.holdRegsMax.parity  = 2;
+   modbus.holdRegsMin.stop_bits  = 0;
+   modbus.holdRegsMax.stop_bits  = 1;
+   modbus.holdRegsMin.reset_max  = 0x524D;
+   modbus.holdRegsMax.reset_max  = 0x524D;
 
-   modbus.outRegs.address   = flash.address;
-   modbus.outRegs.baudrate  = flash.baudrate;
-   modbus.outRegs.parity    = flash.parity;
-   modbus.outRegs.stop_bits = flash.stop_bits;
-   modbus.outRegs.version   = flash.version;
+   modbus.holdRegs.address   = flash.address;
+   modbus.holdRegs.baudrate  = flash.baudrate;
+   modbus.holdRegs.parity    = flash.parity;
+   modbus.holdRegs.stop_bits = flash.stop_bits;
+   modbus.input_Regs.version_device   = flash.version_device;
+   modbus.input_Regs.version_lib      = flash.version_lib;
 
 
    // volatile uint16_t temperature{0};

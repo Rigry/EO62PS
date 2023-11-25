@@ -1,141 +1,153 @@
-build/main.d: src/main.cpp mculib/src/periph/periph_rcc.h \
- mculib/src/periph/periph.h mculib/STM32F0_files/stm32f0xx.h \
- mculib/STM32F0_files/stm32f030x6.h mculib/STM32F0_files/CMSIS/core_cm0.h \
- mculib/STM32F0_files/CMSIS/core_cmInstr.h \
- mculib/STM32F0_files/CMSIS/cmsis_gcc.h \
- mculib/STM32F0_files/CMSIS/core_cmFunc.h mculib/src/periph/rcc_f0.h \
- mculib/src/bits/bits_rcc_f0.h mculib/src/periph/init_clock.h \
- mculib/src/periph/init_clock_f0.h mculib/src/periph/periph_flash.h \
- mculib/src/periph/flash_f0.h mculib/src/bits/bits_flash_f0.h \
- mculib/src/literals.h src/sensor.h mculib/src/pin.h \
- mculib/src/periph/periph_gpio.h mculib/src/pins.h \
- mculib/src/periph/gpio_f0_f4_f7.h mculib/src/bits/bits_gpio_f0_f4_f7.h \
- mculib/src/meta.h mculib/src/adc.h mculib/src/periph/periph_adc.h \
- mculib/src/periph/adc_f0.h mculib/src/bits/bits_adc_f0.h \
- mculib/src/periph/periph_dma.h mculib/src/periph/dma_f0.h \
- mculib/src/bits/bits_dma_f0.h mculib/src/periph/dma_stream_f0_f1.h \
- mculib/src/bits/bits_dma_stream_f0_f1.h mculib/src/list.h \
- mculib/src/dynarray.h mculib/src/heap.h mculib/src/function.h \
- mculib/src/interrupt.h mculib/src/interrupts.h \
- mculib/src/periph/periph_usart.h mculib/src/periph/usart_f0.h \
- mculib/src/bits/bits_usart_f0.h mculib/src/periph/periph_spi.h \
- mculib/src/periph/periph_tim.h mculib/src/periph/tim_f0_f4.h \
- mculib/src/bits/bits_tim_f0.h mculib/src/flash.h mculib/src/timers.h \
- mculib/src/subscriber.h mculib/src/periph/systick.h \
- mculib/src/bits/bits_systick_f0_f4.h mculib/src/modbus_slave.h \
- mculib/src/table_crc.h mculib/src/uart.h mculib/src/net_buffer.h \
- mculib/src/modbus_common.h mculib/src/NTC_table.h src/utils.h
+build/main.d: src/main.cpp ../mculib3/src/periph/periph_rcc.h \
+ ../mculib3/src/periph/periph.h ../mculib3/STM32F0_files/stm32f0xx.h \
+ ../mculib3/STM32F0_files/stm32f030x6.h \
+ ../mculib3/STM32F0_files/CMSIS/core_cm0.h \
+ ../mculib3/STM32F0_files/CMSIS/core_cmInstr.h \
+ ../mculib3/STM32F0_files/CMSIS/cmsis_gcc.h \
+ ../mculib3/STM32F0_files/CMSIS/core_cmFunc.h \
+ ../mculib3/src/periph/rcc_f0.h ../mculib3/src/bits/bits_rcc_f0.h \
+ ../mculib3/src/periph/init_clock.h ../mculib3/src/periph/init_clock_f0.h \
+ ../mculib3/src/periph/periph_flash.h ../mculib3/src/periph/flash_f0.h \
+ ../mculib3/src/bits/bits_flash_f0.h ../mculib3/src/literals.h \
+ src/sensor.h ../mculib3/src/pin.h ../mculib3/src/periph/periph_gpio.h \
+ ../mculib3/src/pins.h ../mculib3/src/periph/gpio_f0_f4_f7.h \
+ ../mculib3/src/bits/bits_gpio_f0_f4_f7.h ../mculib3/src/meta.h \
+ ../mculib3/src/adc.h ../mculib3/src/periph/periph_adc.h \
+ ../mculib3/src/periph/adc_f0.h ../mculib3/src/bits/bits_adc_f0.h \
+ ../mculib3/src/periph/periph_dma.h ../mculib3/src/periph/dma_f0.h \
+ ../mculib3/src/bits/bits_dma_f0.h \
+ ../mculib3/src/periph/dma_stream_f0_f1.h \
+ ../mculib3/src/bits/bits_dma_stream_f0_f1.h ../mculib3/src/list.h \
+ ../mculib3/src/dynarray.h ../mculib3/src/heap.h \
+ ../mculib3/src/function.h ../mculib3/src/interrupt.h \
+ ../mculib3/src/interrupts.h ../mculib3/src/periph/periph_usart.h \
+ ../mculib3/src/periph/usart_f0.h ../mculib3/src/bits/bits_usart_f0.h \
+ ../mculib3/src/periph/periph_spi.h ../mculib3/src/periph/periph_tim.h \
+ ../mculib3/src/periph/tim_f0_f4.h ../mculib3/src/bits/bits_tim_f0.h \
+ ../mculib3/src/periph/periph_exti.h ../mculib3/src/periph/exti_f0.h \
+ ../mculib3/src/bits/bits_exti_f0.h ../mculib3/src/flash.h \
+ ../mculib3/src/timers.h ../mculib3/src/subscriber.h \
+ ../mculib3/src/periph/systick.h ../mculib3/src/bits/bits_systick_f0_f4.h \
+ ../mculib3/src/modbus_slave.h ../mculib3/src/table_crc.h \
+ ../mculib3/src/uart.h ../mculib3/src/net_buffer.h \
+ ../mculib3/src/modbus_common.h ../mculib3/src/NTC_table.h src/utils.h
 
-mculib/src/periph/periph_rcc.h:
+../mculib3/src/periph/periph_rcc.h:
 
-mculib/src/periph/periph.h:
+../mculib3/src/periph/periph.h:
 
-mculib/STM32F0_files/stm32f0xx.h:
+../mculib3/STM32F0_files/stm32f0xx.h:
 
-mculib/STM32F0_files/stm32f030x6.h:
+../mculib3/STM32F0_files/stm32f030x6.h:
 
-mculib/STM32F0_files/CMSIS/core_cm0.h:
+../mculib3/STM32F0_files/CMSIS/core_cm0.h:
 
-mculib/STM32F0_files/CMSIS/core_cmInstr.h:
+../mculib3/STM32F0_files/CMSIS/core_cmInstr.h:
 
-mculib/STM32F0_files/CMSIS/cmsis_gcc.h:
+../mculib3/STM32F0_files/CMSIS/cmsis_gcc.h:
 
-mculib/STM32F0_files/CMSIS/core_cmFunc.h:
+../mculib3/STM32F0_files/CMSIS/core_cmFunc.h:
 
-mculib/src/periph/rcc_f0.h:
+../mculib3/src/periph/rcc_f0.h:
 
-mculib/src/bits/bits_rcc_f0.h:
+../mculib3/src/bits/bits_rcc_f0.h:
 
-mculib/src/periph/init_clock.h:
+../mculib3/src/periph/init_clock.h:
 
-mculib/src/periph/init_clock_f0.h:
+../mculib3/src/periph/init_clock_f0.h:
 
-mculib/src/periph/periph_flash.h:
+../mculib3/src/periph/periph_flash.h:
 
-mculib/src/periph/flash_f0.h:
+../mculib3/src/periph/flash_f0.h:
 
-mculib/src/bits/bits_flash_f0.h:
+../mculib3/src/bits/bits_flash_f0.h:
 
-mculib/src/literals.h:
+../mculib3/src/literals.h:
 
 src/sensor.h:
 
-mculib/src/pin.h:
+../mculib3/src/pin.h:
 
-mculib/src/periph/periph_gpio.h:
+../mculib3/src/periph/periph_gpio.h:
 
-mculib/src/pins.h:
+../mculib3/src/pins.h:
 
-mculib/src/periph/gpio_f0_f4_f7.h:
+../mculib3/src/periph/gpio_f0_f4_f7.h:
 
-mculib/src/bits/bits_gpio_f0_f4_f7.h:
+../mculib3/src/bits/bits_gpio_f0_f4_f7.h:
 
-mculib/src/meta.h:
+../mculib3/src/meta.h:
 
-mculib/src/adc.h:
+../mculib3/src/adc.h:
 
-mculib/src/periph/periph_adc.h:
+../mculib3/src/periph/periph_adc.h:
 
-mculib/src/periph/adc_f0.h:
+../mculib3/src/periph/adc_f0.h:
 
-mculib/src/bits/bits_adc_f0.h:
+../mculib3/src/bits/bits_adc_f0.h:
 
-mculib/src/periph/periph_dma.h:
+../mculib3/src/periph/periph_dma.h:
 
-mculib/src/periph/dma_f0.h:
+../mculib3/src/periph/dma_f0.h:
 
-mculib/src/bits/bits_dma_f0.h:
+../mculib3/src/bits/bits_dma_f0.h:
 
-mculib/src/periph/dma_stream_f0_f1.h:
+../mculib3/src/periph/dma_stream_f0_f1.h:
 
-mculib/src/bits/bits_dma_stream_f0_f1.h:
+../mculib3/src/bits/bits_dma_stream_f0_f1.h:
 
-mculib/src/list.h:
+../mculib3/src/list.h:
 
-mculib/src/dynarray.h:
+../mculib3/src/dynarray.h:
 
-mculib/src/heap.h:
+../mculib3/src/heap.h:
 
-mculib/src/function.h:
+../mculib3/src/function.h:
 
-mculib/src/interrupt.h:
+../mculib3/src/interrupt.h:
 
-mculib/src/interrupts.h:
+../mculib3/src/interrupts.h:
 
-mculib/src/periph/periph_usart.h:
+../mculib3/src/periph/periph_usart.h:
 
-mculib/src/periph/usart_f0.h:
+../mculib3/src/periph/usart_f0.h:
 
-mculib/src/bits/bits_usart_f0.h:
+../mculib3/src/bits/bits_usart_f0.h:
 
-mculib/src/periph/periph_spi.h:
+../mculib3/src/periph/periph_spi.h:
 
-mculib/src/periph/periph_tim.h:
+../mculib3/src/periph/periph_tim.h:
 
-mculib/src/periph/tim_f0_f4.h:
+../mculib3/src/periph/tim_f0_f4.h:
 
-mculib/src/bits/bits_tim_f0.h:
+../mculib3/src/bits/bits_tim_f0.h:
 
-mculib/src/flash.h:
+../mculib3/src/periph/periph_exti.h:
 
-mculib/src/timers.h:
+../mculib3/src/periph/exti_f0.h:
 
-mculib/src/subscriber.h:
+../mculib3/src/bits/bits_exti_f0.h:
 
-mculib/src/periph/systick.h:
+../mculib3/src/flash.h:
 
-mculib/src/bits/bits_systick_f0_f4.h:
+../mculib3/src/timers.h:
 
-mculib/src/modbus_slave.h:
+../mculib3/src/subscriber.h:
 
-mculib/src/table_crc.h:
+../mculib3/src/periph/systick.h:
 
-mculib/src/uart.h:
+../mculib3/src/bits/bits_systick_f0_f4.h:
 
-mculib/src/net_buffer.h:
+../mculib3/src/modbus_slave.h:
 
-mculib/src/modbus_common.h:
+../mculib3/src/table_crc.h:
 
-mculib/src/NTC_table.h:
+../mculib3/src/uart.h:
+
+../mculib3/src/net_buffer.h:
+
+../mculib3/src/modbus_common.h:
+
+../mculib3/src/NTC_table.h:
 
 src/utils.h:

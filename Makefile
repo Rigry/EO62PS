@@ -8,7 +8,7 @@ BUILD_DIR = build
 # source
 ######################################
 CPP_SOURCES_F0 = src/main.cpp
-LIBRARY_PATH = mculib
+LIBRARY_PATH = ../mculib3
 CMSIS_PATH = $(LIBRARY_PATH)/STM32F0_files
 
 ASM_SOURCES_F0 = $(CMSIS_PATH)/startup_stm32f030x6.s
@@ -71,7 +71,7 @@ LDFLAGS_F0  = $(MCU_F0) -specs=nano.specs -specs=nosys.specs
 LDFLAGS_F0 += -T$(LDSCRIPT_F0) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET_F0).map,--cref -Wl,--gc-sections
 
 # default action: build all
-all: submodule clean \
+all:  clean \
 $(BUILD_DIR)/$(TARGET_F0).elf $(BUILD_DIR)/$(TARGET_F0).hex $(BUILD_DIR)/$(TARGET_F0).bin
 	
 
