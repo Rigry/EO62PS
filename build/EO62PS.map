@@ -292,7 +292,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000008000000                g_pfnVectors
                 0x00000000080000c0                . = ALIGN (0x4)
 
-.text           0x00000000080000c0     0x214c
+.text           0x00000000080000c0     0x2158
                 0x00000000080000c0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080000c0       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
@@ -483,131 +483,131 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000008001430       0x18 build/main.o
                 0x0000000008001430                Modbus_slave<Hold_regs, Input_regs, 0u>::answer_05()
  .text.startup.main
-                0x0000000008001448      0x988 build/main.o
+                0x0000000008001448      0x994 build/main.o
                 0x0000000008001448                main
  .text._ZSt4findIPbbET_S1_S1_RKT0_
-                0x0000000008001dd0       0x66 build/main.o
-                0x0000000008001dd0                bool* std::find<bool*, bool>(bool*, bool*, bool const&)
- *fill*         0x0000000008001e36        0x2 
+                0x0000000008001ddc       0x66 build/main.o
+                0x0000000008001ddc                bool* std::find<bool*, bool>(bool*, bool*, bool const&)
+ *fill*         0x0000000008001e42        0x2 
  .text._ZN18Flash_updater_implIZ4mainE10Flash_dataJLN3mcu5FLASH6SectorE31ELS3_30EEE6notifyEv
-                0x0000000008001e38      0x1e8 build/main.o
+                0x0000000008001e44      0x1e8 build/main.o
  .text.startup._GLOBAL__sub_I__ZN3mcu5FLASH6unlockEv
-                0x0000000008002020      0x174 build/main.o
+                0x000000000800202c      0x174 build/main.o
  .text.Reset_Handler
-                0x0000000008002194       0x50 build/startup_stm32f030x6.o
-                0x0000000008002194                Reset_Handler
+                0x00000000080021a0       0x50 build/startup_stm32f030x6.o
+                0x00000000080021a0                Reset_Handler
  .text.Default_Handler
-                0x00000000080021e4        0x2 build/startup_stm32f030x6.o
-                0x00000000080021e4                HardFault_Handler
-                0x00000000080021e4                PendSV_Handler
-                0x00000000080021e4                NMI_Handler
-                0x00000000080021e4                I2C1_IRQHandler
-                0x00000000080021e4                SPI1_IRQHandler
-                0x00000000080021e4                ADC1_IRQHandler
-                0x00000000080021e4                RTC_IRQHandler
-                0x00000000080021e4                RCC_IRQHandler
-                0x00000000080021e4                Default_Handler
-                0x00000000080021e4                SVC_Handler
-                0x00000000080021e4                WWDG_IRQHandler
-                0x00000000080021e4                FLASH_IRQHandler
+                0x00000000080021f0        0x2 build/startup_stm32f030x6.o
+                0x00000000080021f0                HardFault_Handler
+                0x00000000080021f0                PendSV_Handler
+                0x00000000080021f0                NMI_Handler
+                0x00000000080021f0                I2C1_IRQHandler
+                0x00000000080021f0                SPI1_IRQHandler
+                0x00000000080021f0                ADC1_IRQHandler
+                0x00000000080021f0                RTC_IRQHandler
+                0x00000000080021f0                RCC_IRQHandler
+                0x00000000080021f0                Default_Handler
+                0x00000000080021f0                SVC_Handler
+                0x00000000080021f0                WWDG_IRQHandler
+                0x00000000080021f0                FLASH_IRQHandler
  .text.__aeabi_atexit
-                0x00000000080021e6        0xe /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
-                0x00000000080021e6                __aeabi_atexit
+                0x00000000080021f2        0xe /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
+                0x00000000080021f2                __aeabi_atexit
  *(.glue_7)
- .glue_7        0x00000000080021f4        0x0 linker stubs
+ .glue_7        0x0000000008002200        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000080021f4        0x0 linker stubs
+ .glue_7t       0x0000000008002200        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00000000080021f4        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .eh_frame      0x0000000008002200        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  *(.init)
- .init          0x00000000080021f4        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
-                0x00000000080021f4                _init
- .init          0x00000000080021f8        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
+ .init          0x0000000008002200        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+                0x0000000008002200                _init
+ .init          0x0000000008002204        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
  *(.fini)
- .fini          0x0000000008002200        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
-                0x0000000008002200                _fini
- .fini          0x0000000008002204        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
-                0x000000000800220c                . = ALIGN (0x4)
-                0x000000000800220c                _etext = .
+ .fini          0x000000000800220c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+                0x000000000800220c                _fini
+ .fini          0x0000000008002210        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
+                0x0000000008002218                . = ALIGN (0x4)
+                0x0000000008002218                _etext = .
 
-.vfp11_veneer   0x000000000800220c        0x0
- .vfp11_veneer  0x000000000800220c        0x0 linker stubs
+.vfp11_veneer   0x0000000008002218        0x0
+ .vfp11_veneer  0x0000000008002218        0x0 linker stubs
 
-.v4_bx          0x000000000800220c        0x0
- .v4_bx         0x000000000800220c        0x0 linker stubs
+.v4_bx          0x0000000008002218        0x0
+ .v4_bx         0x0000000008002218        0x0 linker stubs
 
-.iplt           0x000000000800220c        0x0
- .iplt          0x000000000800220c        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x0000000008002218        0x0
+ .iplt          0x0000000008002218        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x000000000800220c      0x3ec
-                0x000000000800220c                . = ALIGN (0x4)
+.rodata         0x0000000008002218      0x3ec
+                0x0000000008002218                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x000000000800220c        0xa build/main.o
- *fill*         0x0000000008002216        0x2 
- .rodata        0x0000000008002218        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
-                0x0000000008002218                __on_exit_args
+ .rodata        0x0000000008002218        0xa build/main.o
+ *fill*         0x0000000008002222        0x2 
+ .rodata        0x0000000008002224        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
+                0x0000000008002224                __on_exit_args
  *(.rodata*)
  .rodata._ZTV5Timer
-                0x000000000800221c        0xc build/main.o
-                0x000000000800221c                vtable for Timer
- .rodata._ZTVN12Modbus_slaveI9Hold_regs10Input_regsLj0EE14uart_interruptE
                 0x0000000008002228        0xc build/main.o
-                0x0000000008002228                vtable for Modbus_slave<Hold_regs, Input_regs, 0u>::uart_interrupt
- .rodata._ZTVN12Modbus_slaveI9Hold_regs10Input_regsLj0EE13dma_interruptE
+                0x0000000008002228                vtable for Timer
+ .rodata._ZTVN12Modbus_slaveI9Hold_regs10Input_regsLj0EE14uart_interruptE
                 0x0000000008002234        0xc build/main.o
-                0x0000000008002234                vtable for Modbus_slave<Hold_regs, Input_regs, 0u>::dma_interrupt
- .rodata._ZTV12Modbus_slaveI9Hold_regs10Input_regsLj0EE
+                0x0000000008002234                vtable for Modbus_slave<Hold_regs, Input_regs, 0u>::uart_interrupt
+ .rodata._ZTVN12Modbus_slaveI9Hold_regs10Input_regsLj0EE13dma_interruptE
                 0x0000000008002240        0xc build/main.o
-                0x0000000008002240                vtable for Modbus_slave<Hold_regs, Input_regs, 0u>
+                0x0000000008002240                vtable for Modbus_slave<Hold_regs, Input_regs, 0u>::dma_interrupt
+ .rodata._ZTV12Modbus_slaveI9Hold_regs10Input_regsLj0EE
+                0x000000000800224c        0xc build/main.o
+                0x000000000800224c                vtable for Modbus_slave<Hold_regs, Input_regs, 0u>
  .rodata._ZL13crc_low_table
-                0x000000000800224c      0x100 build/main.o
+                0x0000000008002258      0x100 build/main.o
  .rodata._ZL14crc_high_table
-                0x000000000800234c      0x100 build/main.o
+                0x0000000008002358      0x100 build/main.o
  .rodata._ZN18Flash_updater_implIZ4mainE10Flash_dataJLN3mcu5FLASH6SectorE31ELS3_30EEE7sectorsE
-                0x000000000800244c        0x2 build/main.o
- *fill*         0x000000000800244e        0x2 
+                0x0000000008002458        0x2 build/main.o
+ *fill*         0x000000000800245a        0x2 
  .rodata._ZN3NTCL5u2904ILj33ELj5100EEE
-                0x0000000008002450      0x190 build/main.o
+                0x000000000800245c      0x190 build/main.o
  .rodata._ZTV11ADC_average
-                0x00000000080025e0        0xc build/main.o
-                0x00000000080025e0                vtable for ADC_average
- .rodata._ZTV18Flash_updater_implIZ4mainE10Flash_dataJLN3mcu5FLASH6SectorE31ELS3_30EEE
                 0x00000000080025ec        0xc build/main.o
-                0x00000000080025f8                . = ALIGN (0x4)
+                0x00000000080025ec                vtable for ADC_average
+ .rodata._ZTV18Flash_updater_implIZ4mainE10Flash_dataJLN3mcu5FLASH6SectorE31ELS3_30EEE
+                0x00000000080025f8        0xc build/main.o
+                0x0000000008002604                . = ALIGN (0x4)
 
-.rel.dyn        0x00000000080025f8        0x0
- .rel.iplt      0x00000000080025f8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x0000000008002604        0x0
+ .rel.iplt      0x0000000008002604        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00000000080025f8        0x0
-                0x00000000080025f8                __exidx_start = .
+.ARM            0x0000000008002604        0x0
+                0x0000000008002604                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080025f8                __exidx_end = .
+                0x0000000008002604                __exidx_end = .
 
-.preinit_array  0x00000000080025f8        0x0
-                0x00000000080025f8                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008002604        0x0
+                0x0000000008002604                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080025f8                PROVIDE (__preinit_array_end = .)
+                0x0000000008002604                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x00000000080025f8        0x8
-                0x00000000080025f8                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008002604        0x8
+                0x0000000008002604                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080025f8        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
- .init_array    0x00000000080025fc        0x4 build/main.o
-                0x0000000008002600                PROVIDE (__init_array_end = .)
+ .init_array    0x0000000008002604        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .init_array    0x0000000008002608        0x4 build/main.o
+                0x000000000800260c                PROVIDE (__init_array_end = .)
 
-.fini_array     0x0000000008002600        0x4
-                0x0000000008002600                PROVIDE (__fini_array_start = .)
+.fini_array     0x000000000800260c        0x4
+                0x000000000800260c                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008002600        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x0000000008002604                PROVIDE (__fini_array_end = .)
-                0x0000000008002604                _sidata = LOADADDR (.data)
+ .fini_array    0x000000000800260c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000008002610                PROVIDE (__fini_array_end = .)
+                0x0000000008002610                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0x4 load address 0x0000000008002604
+.data           0x0000000020000000        0x4 load address 0x0000000008002610
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -618,17 +618,17 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000020000004                _edata = .
 
 .tm_clone_table
-                0x0000000020000004        0x0 load address 0x0000000008002608
+                0x0000000020000004        0x0 load address 0x0000000008002614
  .tm_clone_table
                 0x0000000020000004        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x0000000020000004        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x0000000020000004        0x0 load address 0x0000000008002608
+.igot.plt       0x0000000020000004        0x0 load address 0x0000000008002614
  .igot.plt      0x0000000020000004        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
                 0x0000000020000004                . = ALIGN (0x4)
 
-.bss            0x0000000020000004      0x61c load address 0x0000000008002608
+.bss            0x0000000020000004      0x624 load address 0x0000000008002614
                 0x0000000020000004                _sbss = .
                 0x0000000020000004                __bss_start__ = _sbss
  *(.bss)
@@ -672,136 +672,136 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000020000244        0x4 build/main.o
                 0x0000000020000244                guard variable for Modbus_slave<Hold_regs, Input_regs, 0u>::make<(mcu::Periph)8, mcu::Pin_<(mcu::Periph)3, 9>, mcu::Pin_<(mcu::Periph)3, 10>, mcu::Pin_<(mcu::Periph)3, 8> >(unsigned char, UART_sized<255u>::Settings)::modbus
  .bss._ZZN12Modbus_slaveI9Hold_regs10Input_regsLj0EE4makeILN3mcu6PeriphE8ENS4_4Pin_ILS5_3ELi9EEENS6_ILS5_3ELi10EEENS6_ILS5_3ELi8EEEEERDahN10UART_sizedILj255EE8SettingsEE6modbus
-                0x0000000020000248       0x88 build/main.o
+                0x0000000020000248       0x90 build/main.o
                 0x0000000020000248                Modbus_slave<Hold_regs, Input_regs, 0u>::make<(mcu::Periph)8, mcu::Pin_<(mcu::Periph)3, 9>, mcu::Pin_<(mcu::Periph)3, 10>, mcu::Pin_<(mcu::Periph)3, 8> >(unsigned char, UART_sized<255u>::Settings)::modbus
  .bss._ZGVZN10UART_sizedILj255EE4makeILN3mcu6PeriphE8ENS2_4Pin_ILS3_3ELi9EEENS4_ILS3_3ELi10EEENS4_ILS3_3ELi8EEEEERDavE4uart
-                0x00000000200002d0        0x4 build/main.o
-                0x00000000200002d0                guard variable for UART_sized<255u>::make<(mcu::Periph)8, mcu::Pin_<(mcu::Periph)3, 9>, mcu::Pin_<(mcu::Periph)3, 10>, mcu::Pin_<(mcu::Periph)3, 8> >()::uart
+                0x00000000200002d8        0x4 build/main.o
+                0x00000000200002d8                guard variable for UART_sized<255u>::make<(mcu::Periph)8, mcu::Pin_<(mcu::Periph)3, 9>, mcu::Pin_<(mcu::Periph)3, 10>, mcu::Pin_<(mcu::Periph)3, 8> >()::uart
  .bss._ZZN10UART_sizedILj255EE4makeILN3mcu6PeriphE8ENS2_4Pin_ILS3_3ELi9EEENS4_ILS3_3ELi10EEENS4_ILS3_3ELi8EEEEERDavE4uart
-                0x00000000200002d4      0x12c build/main.o
-                0x00000000200002d4                UART_sized<255u>::make<(mcu::Periph)8, mcu::Pin_<(mcu::Periph)3, 9>, mcu::Pin_<(mcu::Periph)3, 10>, mcu::Pin_<(mcu::Periph)3, 8> >()::uart
+                0x00000000200002dc      0x12c build/main.o
+                0x00000000200002dc                UART_sized<255u>::make<(mcu::Periph)8, mcu::Pin_<(mcu::Periph)3, 9>, mcu::Pin_<(mcu::Periph)3, 10>, mcu::Pin_<(mcu::Periph)3, 8> >()::uart
  .bss._ZGVZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE3ELi8EEELNS1_7PinModeE1EEERDavE3pin
-                0x0000000020000400        0x4 build/main.o
-                0x0000000020000400                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)3, 8>, (mcu::PinMode)1>()::pin
+                0x0000000020000408        0x4 build/main.o
+                0x0000000020000408                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)3, 8>, (mcu::PinMode)1>()::pin
  .bss._ZZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE3ELi8EEELNS1_7PinModeE1EEERDavE3pin
-                0x0000000020000404        0x8 build/main.o
-                0x0000000020000404                Pin::make<mcu::Pin_<(mcu::Periph)3, 8>, (mcu::PinMode)1>()::pin
+                0x000000002000040c        0x8 build/main.o
+                0x000000002000040c                Pin::make<mcu::Pin_<(mcu::Periph)3, 8>, (mcu::PinMode)1>()::pin
  .bss._ZGVZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE3ELi10EEELNS1_7PinModeE4EEERDavE3pin
-                0x000000002000040c        0x4 build/main.o
-                0x000000002000040c                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)3, 10>, (mcu::PinMode)4>()::pin
+                0x0000000020000414        0x4 build/main.o
+                0x0000000020000414                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)3, 10>, (mcu::PinMode)4>()::pin
  .bss._ZZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE3ELi10EEELNS1_7PinModeE4EEERDavE3pin
-                0x0000000020000410        0x8 build/main.o
-                0x0000000020000410                Pin::make<mcu::Pin_<(mcu::Periph)3, 10>, (mcu::PinMode)4>()::pin
+                0x0000000020000418        0x8 build/main.o
+                0x0000000020000418                Pin::make<mcu::Pin_<(mcu::Periph)3, 10>, (mcu::PinMode)4>()::pin
  .bss._ZGVZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE3ELi9EEELNS1_7PinModeE4EEERDavE3pin
-                0x0000000020000418        0x4 build/main.o
-                0x0000000020000418                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)3, 9>, (mcu::PinMode)4>()::pin
+                0x0000000020000420        0x4 build/main.o
+                0x0000000020000420                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)3, 9>, (mcu::PinMode)4>()::pin
  .bss._ZZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE3ELi9EEELNS1_7PinModeE4EEERDavE3pin
-                0x000000002000041c        0x8 build/main.o
-                0x000000002000041c                Pin::make<mcu::Pin_<(mcu::Periph)3, 9>, (mcu::PinMode)4>()::pin
+                0x0000000020000424        0x8 build/main.o
+                0x0000000020000424                Pin::make<mcu::Pin_<(mcu::Periph)3, 9>, (mcu::PinMode)4>()::pin
  .bss._ZGVZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE4ELi6EEELNS1_7PinModeE0EEERDavE3pin
-                0x0000000020000424        0x4 build/main.o
-                0x0000000020000424                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)4, 6>, (mcu::PinMode)0>()::pin
+                0x000000002000042c        0x4 build/main.o
+                0x000000002000042c                guard variable for Pin::make<mcu::Pin_<(mcu::Periph)4, 6>, (mcu::PinMode)0>()::pin
  .bss._ZZN3Pin4makeIN3mcu4Pin_ILNS1_6PeriphE4ELi6EEELNS1_7PinModeE0EEERDavE3pin
-                0x0000000020000428        0x8 build/main.o
-                0x0000000020000428                Pin::make<mcu::Pin_<(mcu::Periph)4, 6>, (mcu::PinMode)0>()::pin
- .bss.heap      0x0000000020000430      0x108 build/main.o
-                0x0000000020000430                heap
+                0x0000000020000430        0x8 build/main.o
+                0x0000000020000430                Pin::make<mcu::Pin_<(mcu::Periph)4, 6>, (mcu::PinMode)0>()::pin
+ .bss.heap      0x0000000020000438      0x108 build/main.o
+                0x0000000020000438                heap
  .bss.interrupt_DMA1_channel1
-                0x0000000020000538        0x8 build/main.o
-                0x0000000020000538                interrupt_DMA1_channel1
- .bss.interrupt_DMA1_channel2
                 0x0000000020000540        0x8 build/main.o
-                0x0000000020000540                interrupt_DMA1_channel2
- .bss.interrupt_DMA1_channel3
+                0x0000000020000540                interrupt_DMA1_channel1
+ .bss.interrupt_DMA1_channel2
                 0x0000000020000548        0x8 build/main.o
-                0x0000000020000548                interrupt_DMA1_channel3
- .bss.interrupt_DMA1_channel4
+                0x0000000020000548                interrupt_DMA1_channel2
+ .bss.interrupt_DMA1_channel3
                 0x0000000020000550        0x8 build/main.o
-                0x0000000020000550                interrupt_DMA1_channel4
- .bss.interrupt_DMA1_channel5
+                0x0000000020000550                interrupt_DMA1_channel3
+ .bss.interrupt_DMA1_channel4
                 0x0000000020000558        0x8 build/main.o
-                0x0000000020000558                interrupt_DMA1_channel5
- .bss.interrupt_EXTI0
+                0x0000000020000558                interrupt_DMA1_channel4
+ .bss.interrupt_DMA1_channel5
                 0x0000000020000560        0x8 build/main.o
-                0x0000000020000560                interrupt_EXTI0
- .bss.interrupt_EXTI1
+                0x0000000020000560                interrupt_DMA1_channel5
+ .bss.interrupt_EXTI0
                 0x0000000020000568        0x8 build/main.o
-                0x0000000020000568                interrupt_EXTI1
- .bss.interrupt_EXTI10
+                0x0000000020000568                interrupt_EXTI0
+ .bss.interrupt_EXTI1
                 0x0000000020000570        0x8 build/main.o
-                0x0000000020000570                interrupt_EXTI10
- .bss.interrupt_EXTI11
+                0x0000000020000570                interrupt_EXTI1
+ .bss.interrupt_EXTI10
                 0x0000000020000578        0x8 build/main.o
-                0x0000000020000578                interrupt_EXTI11
- .bss.interrupt_EXTI12
+                0x0000000020000578                interrupt_EXTI10
+ .bss.interrupt_EXTI11
                 0x0000000020000580        0x8 build/main.o
-                0x0000000020000580                interrupt_EXTI12
- .bss.interrupt_EXTI13
+                0x0000000020000580                interrupt_EXTI11
+ .bss.interrupt_EXTI12
                 0x0000000020000588        0x8 build/main.o
-                0x0000000020000588                interrupt_EXTI13
- .bss.interrupt_EXTI14
+                0x0000000020000588                interrupt_EXTI12
+ .bss.interrupt_EXTI13
                 0x0000000020000590        0x8 build/main.o
-                0x0000000020000590                interrupt_EXTI14
- .bss.interrupt_EXTI15
+                0x0000000020000590                interrupt_EXTI13
+ .bss.interrupt_EXTI14
                 0x0000000020000598        0x8 build/main.o
-                0x0000000020000598                interrupt_EXTI15
- .bss.interrupt_EXTI2
+                0x0000000020000598                interrupt_EXTI14
+ .bss.interrupt_EXTI15
                 0x00000000200005a0        0x8 build/main.o
-                0x00000000200005a0                interrupt_EXTI2
- .bss.interrupt_EXTI3
+                0x00000000200005a0                interrupt_EXTI15
+ .bss.interrupt_EXTI2
                 0x00000000200005a8        0x8 build/main.o
-                0x00000000200005a8                interrupt_EXTI3
- .bss.interrupt_EXTI4
+                0x00000000200005a8                interrupt_EXTI2
+ .bss.interrupt_EXTI3
                 0x00000000200005b0        0x8 build/main.o
-                0x00000000200005b0                interrupt_EXTI4
- .bss.interrupt_EXTI5
+                0x00000000200005b0                interrupt_EXTI3
+ .bss.interrupt_EXTI4
                 0x00000000200005b8        0x8 build/main.o
-                0x00000000200005b8                interrupt_EXTI5
- .bss.interrupt_EXTI6
+                0x00000000200005b8                interrupt_EXTI4
+ .bss.interrupt_EXTI5
                 0x00000000200005c0        0x8 build/main.o
-                0x00000000200005c0                interrupt_EXTI6
- .bss.interrupt_EXTI7
+                0x00000000200005c0                interrupt_EXTI5
+ .bss.interrupt_EXTI6
                 0x00000000200005c8        0x8 build/main.o
-                0x00000000200005c8                interrupt_EXTI7
- .bss.interrupt_EXTI8
+                0x00000000200005c8                interrupt_EXTI6
+ .bss.interrupt_EXTI7
                 0x00000000200005d0        0x8 build/main.o
-                0x00000000200005d0                interrupt_EXTI8
- .bss.interrupt_EXTI9
+                0x00000000200005d0                interrupt_EXTI7
+ .bss.interrupt_EXTI8
                 0x00000000200005d8        0x8 build/main.o
-                0x00000000200005d8                interrupt_EXTI9
- .bss.interrupt_rtc
+                0x00000000200005d8                interrupt_EXTI8
+ .bss.interrupt_EXTI9
                 0x00000000200005e0        0x8 build/main.o
-                0x00000000200005e0                interrupt_rtc
- .bss.interrupt_spi1
+                0x00000000200005e0                interrupt_EXTI9
+ .bss.interrupt_rtc
                 0x00000000200005e8        0x8 build/main.o
-                0x00000000200005e8                interrupt_spi1
- .bss.interrupt_tim1
+                0x00000000200005e8                interrupt_rtc
+ .bss.interrupt_spi1
                 0x00000000200005f0        0x8 build/main.o
-                0x00000000200005f0                interrupt_tim1
- .bss.interrupt_tim3
+                0x00000000200005f0                interrupt_spi1
+ .bss.interrupt_tim1
                 0x00000000200005f8        0x8 build/main.o
-                0x00000000200005f8                interrupt_tim3
- .bss.interrupt_usart1
+                0x00000000200005f8                interrupt_tim1
+ .bss.interrupt_tim3
                 0x0000000020000600        0x8 build/main.o
-                0x0000000020000600                interrupt_usart1
+                0x0000000020000600                interrupt_tim3
+ .bss.interrupt_usart1
+                0x0000000020000608        0x8 build/main.o
+                0x0000000020000608                interrupt_usart1
  .bss.tickUpdater
-                0x0000000020000608       0x18 build/main.o
-                0x0000000020000608                tickUpdater
+                0x0000000020000610       0x18 build/main.o
+                0x0000000020000610                tickUpdater
  *(COMMON)
-                0x0000000020000620                . = ALIGN (0x4)
-                0x0000000020000620                _ebss = .
-                0x0000000020000620                __bss_end__ = _ebss
+                0x0000000020000628                . = ALIGN (0x4)
+                0x0000000020000628                _ebss = .
+                0x0000000020000628                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000620      0x600 load address 0x0000000008002608
-                0x0000000020000620                . = ALIGN (0x8)
+                0x0000000020000628      0x600 load address 0x0000000008002614
+                0x0000000020000628                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020000820                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000620      0x200 
-                0x0000000020000c20                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000820      0x400 
-                0x0000000020000c20                . = ALIGN (0x8)
+                0x0000000020000828                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000628      0x200 
+                0x0000000020000c28                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000828      0x400 
+                0x0000000020000c28                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -868,21 +868,21 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
  .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
  .comment       0x00000000000000a7       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
 
-.debug_info     0x0000000000000000    0x308cf
- .debug_info    0x0000000000000000    0x2bfa5 build/main.o
- .debug_info    0x000000000002bfa5       0x22 build/startup_stm32f030x6.o
- .debug_info    0x000000000002bfc7      0x166 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
- .debug_info    0x000000000002c12d      0xa23 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
- .debug_info    0x000000000002cb50      0x11a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
- .debug_info    0x000000000002cc6a      0xf35 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_info    0x000000000002db9f      0xf21 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
- .debug_info    0x000000000002eac0      0x92b /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
- .debug_info    0x000000000002f3eb      0xa3c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
- .debug_info    0x000000000002fe27      0xa10 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
- .debug_info    0x0000000000030837       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
- .debug_info    0x000000000003085d       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_info    0x0000000000030883       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_info    0x00000000000308a9       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_info     0x0000000000000000    0x308a7
+ .debug_info    0x0000000000000000    0x2bf7d build/main.o
+ .debug_info    0x000000000002bf7d       0x22 build/startup_stm32f030x6.o
+ .debug_info    0x000000000002bf9f      0x166 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
+ .debug_info    0x000000000002c105      0xa23 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
+ .debug_info    0x000000000002cb28      0x11a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_info    0x000000000002cc42      0xf35 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_info    0x000000000002db77      0xf21 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_info    0x000000000002ea98      0x92b /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
+ .debug_info    0x000000000002f3c3      0xa3c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
+ .debug_info    0x000000000002fdff      0xa10 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_info    0x000000000003080f       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
+ .debug_info    0x0000000000030835       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x000000000003085b       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_info    0x0000000000030881       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x0000000000000000     0x2614
  .debug_abbrev  0x0000000000000000     0x17d8 build/main.o
@@ -900,15 +900,15 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
  .debug_abbrev  0x00000000000025ec       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
  .debug_abbrev  0x0000000000002600       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_loc      0x0000000000000000     0x8041
- .debug_loc     0x0000000000000000     0x73ea build/main.o
- .debug_loc     0x00000000000073ea       0x89 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
- .debug_loc     0x0000000000007473       0x96 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
- .debug_loc     0x0000000000007509       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
- .debug_loc     0x00000000000075a1      0x481 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_loc     0x0000000000007a22      0x2df /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
- .debug_loc     0x0000000000007d01      0x1db /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
- .debug_loc     0x0000000000007edc      0x165 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
+.debug_loc      0x0000000000000000     0x7ea1
+ .debug_loc     0x0000000000000000     0x724a build/main.o
+ .debug_loc     0x000000000000724a       0x89 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
+ .debug_loc     0x00000000000072d3       0x96 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
+ .debug_loc     0x0000000000007369       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_loc     0x0000000000007401      0x481 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_loc     0x0000000000007882      0x2df /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_loc     0x0000000000007b61      0x1db /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
+ .debug_loc     0x0000000000007d3c      0x165 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
 
 .debug_aranges  0x0000000000000000      0x410
  .debug_aranges
@@ -940,54 +940,54 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
  .debug_aranges
                 0x00000000000003f0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_ranges   0x0000000000000000     0x2070
- .debug_ranges  0x0000000000000000     0x2020 build/main.o
- .debug_ranges  0x0000000000002020       0x20 build/startup_stm32f030x6.o
- .debug_ranges  0x0000000000002040       0x10 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
- .debug_ranges  0x0000000000002050       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
+.debug_ranges   0x0000000000000000     0x2050
+ .debug_ranges  0x0000000000000000     0x2000 build/main.o
+ .debug_ranges  0x0000000000002000       0x20 build/startup_stm32f030x6.o
+ .debug_ranges  0x0000000000002020       0x10 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
+ .debug_ranges  0x0000000000002030       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
 
-.debug_line     0x0000000000000000     0x56e2
- .debug_line    0x0000000000000000     0x4661 build/main.o
- .debug_line    0x0000000000004661       0x91 build/startup_stm32f030x6.o
- .debug_line    0x00000000000046f2      0x18d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
- .debug_line    0x000000000000487f      0x17f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
- .debug_line    0x00000000000049fe       0xfc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
- .debug_line    0x0000000000004afa      0x24d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_line    0x0000000000004d47      0x281 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
- .debug_line    0x0000000000004fc8       0xea /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
- .debug_line    0x00000000000050b2      0x247 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
- .debug_line    0x00000000000052f9      0x242 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
- .debug_line    0x000000000000553b       0x68 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
- .debug_line    0x00000000000055a3       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_line    0x000000000000560f       0x73 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_line    0x0000000000005682       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_line     0x0000000000000000     0x56dd
+ .debug_line    0x0000000000000000     0x465c build/main.o
+ .debug_line    0x000000000000465c       0x91 build/startup_stm32f030x6.o
+ .debug_line    0x00000000000046ed      0x18d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
+ .debug_line    0x000000000000487a      0x17f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
+ .debug_line    0x00000000000049f9       0xfc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_line    0x0000000000004af5      0x24d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_line    0x0000000000004d42      0x281 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_line    0x0000000000004fc3       0xea /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
+ .debug_line    0x00000000000050ad      0x247 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
+ .debug_line    0x00000000000052f4      0x242 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_line    0x0000000000005536       0x68 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
+ .debug_line    0x000000000000559e       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x000000000000560a       0x73 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_line    0x000000000000567d       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_str      0x0000000000000000    0x25799
- .debug_str     0x0000000000000000    0x24e10 build/main.o
-                                      0x25734 (size before relaxing)
- .debug_str     0x0000000000024e10       0x3b build/startup_stm32f030x6.o
+.debug_str      0x0000000000000000    0x257b6
+ .debug_str     0x0000000000000000    0x24e2d build/main.o
+                                      0x25751 (size before relaxing)
+ .debug_str     0x0000000000024e2d       0x3b build/startup_stm32f030x6.o
                                          0x52 (size before relaxing)
- .debug_str     0x0000000000024e4b      0x1cd /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
+ .debug_str     0x0000000000024e68      0x1cd /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(atexit_arm.o)
                                         0x255 (size before relaxing)
- .debug_str     0x0000000000025018      0x20d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
+ .debug_str     0x0000000000025035      0x20d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-cxa_atexit.o)
                                         0x652 (size before relaxing)
- .debug_str     0x0000000000025225       0xf2 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_str     0x0000000000025242       0xf2 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
                                         0x222 (size before relaxing)
- .debug_str     0x0000000000025317      0x233 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_str     0x0000000000025334      0x233 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
                                         0x92d (size before relaxing)
- .debug_str     0x000000000002554a       0x9f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_str     0x0000000000025567       0x9f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
                                         0x908 (size before relaxing)
- .debug_str     0x00000000000255e9       0x51 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
+ .debug_str     0x0000000000025606       0x51 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-on_exit_args.o)
                                         0x5fd (size before relaxing)
- .debug_str     0x000000000002563a       0x6e /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
+ .debug_str     0x0000000000025657       0x6e /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__atexit.o)
                                         0x679 (size before relaxing)
- .debug_str     0x00000000000256a8       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_str     0x00000000000256c5       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-__call_atexit.o)
                                         0x624 (size before relaxing)
- .debug_str     0x0000000000025702       0x97 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
+ .debug_str     0x000000000002571f       0x97 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
                                          0xa3 (size before relaxing)
- .debug_str     0x0000000000025799       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_str     0x0000000000025799       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_str     0x0000000000025799       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x00000000000257b6       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x00000000000257b6       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_str     0x00000000000257b6       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
 .debug_frame    0x0000000000000000      0x824
  .debug_frame   0x0000000000000000      0x688 build/main.o

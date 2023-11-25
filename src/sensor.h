@@ -15,7 +15,8 @@ struct Hold_regs {
    uint16_t parity;          // 2
    uint16_t stop_bits;       // 3
    uint16_t service_mode;    // 4 code = 0x534D
-   uint16_t reset_max;       // 5 code = 0x524D or 21069
+   uint16_t save_set;        // 5 code = 0x5356
+   uint16_t reset_max;       // 6 code = 0x524D or 21069
 }__attribute__((packed));
 
    struct Input_regs {
@@ -49,8 +50,10 @@ class Sensor
    uint16_t temperature{0};
    const uint16_t SERVICE_CODE {0x534D};
    const uint16_t RESET_CODE   {0x524D};
+   const uint16_t SAVE_CODE    {0x5356};
 
    bool service_mode{false};
+   bool save_mode{false};
 
    const size_t U = 33;
    const size_t R = 5100;
@@ -86,61 +89,34 @@ public:
          modbus.input_Regs.uv_level_percent = modbus.input_Regs.uv_level * 100 / flash.uv_level_max;
       }
       modbus.input_Regs.temperature = temperature;
+
+      if(not service_mode) {
+         modbus.holdRegs.service_mode = 0;
+         modbus.holdRegs.save_set = 0;
+         modbus.holdRegs.reset_max = 0;
+      }
       
       modbus([&](auto registr){
          switch (registr) {
             case ADR(address):
                if (factory and service_mode) {
-                  flash.address 
+                  modbus.holdRegs.address
                   = modbus.holdRegs.address;
                }
             break;
             case ADR(baudrate):
                if (factory and service_mode) {
-                  flash.baudrate 
-                     = modbus.holdRegs.baudrate;
-                  if (modbus.holdRegs.baudrate == 0)
-                     flash.uart_set.baudrate = USART::Baudrate::BR9600;
-                  else if (modbus.holdRegs.baudrate == 1)
-                     flash.uart_set.baudrate = USART::Baudrate::BR14400;
-                  else if (modbus.holdRegs.baudrate == 2)
-                     flash.uart_set.baudrate = USART::Baudrate::BR19200;
-                  else if (modbus.holdRegs.baudrate == 3)
-                     flash.uart_set.baudrate = USART::Baudrate::BR28800;
-                  else if (modbus.holdRegs.baudrate == 4)
-                     flash.uart_set.baudrate = USART::Baudrate::BR38400;
-                  else if (modbus.holdRegs.baudrate == 5)
-                     flash.uart_set.baudrate = USART::Baudrate::BR57600;
-                  else if (modbus.holdRegs.baudrate == 6)
-                     flash.uart_set.baudrate = USART::Baudrate::BR76800;
-                  else if (modbus.holdRegs.baudrate == 7)
-                     flash.uart_set.baudrate = USART::Baudrate::BR115200;
+                  modbus.holdRegs.baudrate = modbus.holdRegs.baudrate;
                }
             break;
             case ADR(parity):
                if (factory  and service_mode) {
-                  flash.parity 
-                     = modbus.holdRegs.parity;
-                  if (modbus.holdRegs.parity == 0) {
-                     flash.uart_set.parity_enable = false;
-                     flash.uart_set.parity = USART::Parity::even;
-                  } else if (modbus.holdRegs.parity == 1) {
-                     flash.uart_set.parity_enable = true;
-                     flash.uart_set.parity = USART::Parity::even;
-                  } else if (modbus.holdRegs.parity == 2) {
-                     flash.uart_set.parity_enable = true;
-                     flash.uart_set.parity = USART::Parity::odd;
-                  }
+                  modbus.holdRegs.parity = modbus.holdRegs.parity;
                }
             break;
             case ADR(stop_bits):
                if (factory  and service_mode) {
-                  flash.stop_bits 
-                     = modbus.holdRegs.stop_bits;
-                  if (modbus.holdRegs.stop_bits == 0)
-                     flash.uart_set.stop_bits = USART::StopBits::_1;
-                  else if (modbus.holdRegs.stop_bits == 1)
-                     flash.uart_set.stop_bits = USART::StopBits::_2;
+                  modbus.holdRegs.stop_bits = modbus.holdRegs.stop_bits;
                }
             break;
             case ADR(service_mode):
@@ -150,6 +126,11 @@ public:
                } else if(modbus.holdRegs.service_mode == 0){
                   modbus.holdRegs.service_mode = 0;
                   service_mode = false;
+               }
+            break;
+            case ADR(save_set):
+               if(modbus.holdRegs.save_set == SAVE_CODE) {
+                  save_mode = true;
                }
             break;
             case ADR(reset_max):
@@ -162,7 +143,58 @@ public:
             break;
             
          } // switch
+
+         if(save_mode) {
+            if(flash.address != modbus.holdRegs.address) {
+               flash.address = modbus.holdRegs.address;
+            }
+
+            if(flash.baudrate != modbus.holdRegs.baudrate) {
+               flash.baudrate = modbus.holdRegs.baudrate;
+               if (modbus.holdRegs.baudrate == 0)
+                  flash.uart_set.baudrate = USART::Baudrate::BR9600;
+               else if (modbus.holdRegs.baudrate == 1)
+                  flash.uart_set.baudrate = USART::Baudrate::BR14400;
+               else if (modbus.holdRegs.baudrate == 2)
+                  flash.uart_set.baudrate = USART::Baudrate::BR19200;
+               else if (modbus.holdRegs.baudrate == 3)
+                  flash.uart_set.baudrate = USART::Baudrate::BR28800;
+               else if (modbus.holdRegs.baudrate == 4)
+                  flash.uart_set.baudrate = USART::Baudrate::BR38400;
+               else if (modbus.holdRegs.baudrate == 5)
+                  flash.uart_set.baudrate = USART::Baudrate::BR57600;
+               else if (modbus.holdRegs.baudrate == 6)
+                  flash.uart_set.baudrate = USART::Baudrate::BR76800;
+               else if (modbus.holdRegs.baudrate == 7)
+                  flash.uart_set.baudrate = USART::Baudrate::BR115200;
+            }
+            if(flash.parity != modbus.holdRegs.parity) {
+               flash.parity = modbus.holdRegs.parity;
+               if (modbus.holdRegs.parity == 0) {
+                  flash.uart_set.parity_enable = false;
+                  flash.uart_set.parity = USART::Parity::even;
+               } else if (modbus.holdRegs.parity == 1) {
+                  flash.uart_set.parity_enable = true;
+                  flash.uart_set.parity = USART::Parity::even;
+               } else if (modbus.holdRegs.parity == 2) {
+                  flash.uart_set.parity_enable = true;
+                  flash.uart_set.parity = USART::Parity::odd;
+               }
+            }
+            if(flash.stop_bits != modbus.holdRegs.stop_bits) {
+               flash.stop_bits = modbus.holdRegs.stop_bits;
+               if (modbus.holdRegs.stop_bits == 0)
+                  flash.uart_set.stop_bits = USART::StopBits::_1;
+               else if (modbus.holdRegs.stop_bits == 1)
+                  flash.uart_set.stop_bits = USART::StopBits::_2;
+            }
+
+            save_mode = false;
+            modbus.holdRegs.save_set = 0;
+         }
+
       }, [&](auto registr){}); // modbus([&](auto registr)
+
    }
    
 };
