@@ -138,7 +138,7 @@ public:
                   flash.uv_level_max = 0;
                   modbus.holdRegs.reset_max = 0;
                } else {
-                  modbus.holdRegs.reset_max = modbus.holdRegs.reset_max;
+                  modbus.holdRegs.reset_max = 0xFFFF;
                }
             break;
             
